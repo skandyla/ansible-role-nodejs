@@ -39,5 +39,5 @@ script:
     nodejs --version
     && npm --version
 
-#notifications:
-#  webhooks: https://galaxy.ansible.com/api/v1/notifications/
+notifications:
+  webhooks: https://galaxy.ansible.com/api/v1/notifications/
