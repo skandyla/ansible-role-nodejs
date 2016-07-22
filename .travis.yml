@@ -24,7 +24,7 @@ script:
   - ansible-playbook tests/test.yml -i tests/inventory --syntax-check
 
   # Run the role/playbook with ansible-playbook.
-  - ansible-playbook tests/test.yml -i tests/inventory --connection=local 
+  - ansible-playbook tests/test.yml -i tests/inventory --connection=local --sudo
 
   # Idempotence test disabled due to some issue with ansible NPM module.
   # Run the role/playbook again, checking to make sure it's idempotent.
