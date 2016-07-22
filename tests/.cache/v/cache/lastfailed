@@ -1,0 +1,3 @@
+{
+  "test_nodejs.py::test_nodejs_is_installed[paramiko://u14]": true
+}

@@ -1,0 +1,29 @@
+---
+- name: Include OS-specific variables.
+  include_vars: "{{ item }}"
+  with_first_found:
+    - "../vars/{{ ansible_os_family }}_{{ ansible_distribution_major_version }}.yml"
+    - "../vars/{{ ansible_os_family }}.yml"
+
+- name: Delegate to APT system for installation
+  include: use-apt.yml
+  when: ansible_pkg_mgr == "apt"
+
+- name: Delegate to YUM system for installation
+  include: use-yum.yml
+  when: ansible_pkg_mgr == "yum"
+
+- name: Update npm global packages
+  npm:
+    name: "{{ item.name }}"
+    global: yes
+    state: latest
+    #version: "{{ item.version | default('latest') }}"
+  with_items: "{{ nodejs_npm_global_packages }}"
+
+#- name: Check nodejs versions                                                        
+#  shell: >                                                                           
+#     {{ nodejs_bin }} --version && npm --version                                               
+#  register: command                                                                  
+#- debug: var=command.stdout_lines 
+

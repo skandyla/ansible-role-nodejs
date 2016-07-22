@@ -1,0 +1,6 @@
+#
+*.un~
+.vagrant
+playbook.retry
+dev/*
+.cache/*
