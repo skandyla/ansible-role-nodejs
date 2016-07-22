@@ -1,6 +1,8 @@
 Ansible Role: Nodejs
 =========
 
+[![Build Status](https://travis-ci.org/skandyla/ansible-role-nodejs.svg?branch=master)](https://travis-ci.org/skandyla/ansible-role-nodejs)
+
 Install NodeJS with latest npm for RedHat and Debian systems.
 
 Requirements
